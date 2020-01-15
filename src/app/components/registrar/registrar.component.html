@@ -1,0 +1,56 @@
+<div class="container">
+  <h4 slot="center"> Crear Nueva Cuenta</h4>
+  <hr>
+  <form [formGroup]="forma" (ngSubmit)="guardarUsuario()" novalidate="novalidate">
+    <div class="form-group row"
+         [ngClass]="{'has-danger': !forma.get('correo').valid }">
+      <label class="col-2 col-form-label">Correo Electronico</label>
+      <div class="col-8">
+        <input class="form-control"
+               type="text"
+               placeholder="Correo"
+               formControlName="correo">
+
+        <div *ngIf="forma.controls['correo'].errors?.required"
+             class="form-control-feedback">
+          El campo es obligatorio
+        </div>
+
+        <div *ngIf="forma.controls['correo'].errors?.pattern"
+             class="form-control-feedback">
+          Debe de ser un correo Valido.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row"
+         [ngClass]="{'has-danger': forma.get('contrase').valid}">
+      <label class="col-2 col-form-label">Contraseña</label>
+      <div class="col-8">
+        <input class="form-control"
+               type="password"
+               placeholder="Contraseña"
+               formControlName="contrase">
+
+        <div *ngIf="forma.controls['correo'].errors?.required"
+             class="form-control-feedback">
+          El campo es obligatorio
+        </div>
+
+        <div *ngIf="forma.controls['correo'].errors?.milength"
+             class="form-control-feedback">
+          El campo debe tener al menos 6 caracteres
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">&nbsp;</label>
+      <div class="input-group col-md-8">
+        <button type="submit" class="btn btn-outline-primary" [disabled]="!forma.valid" >
+          Registrarse
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
