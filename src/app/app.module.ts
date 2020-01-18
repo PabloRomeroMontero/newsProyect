@@ -15,6 +15,7 @@ import {NewsService} from './services/news.service';
 import {FirebaseService} from './services/firebase.service';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { CallbackComponent } from './components/callback/callback.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     ItemNewComponent,
     LoginComponent,
     NavbarComponent,
-    RegistrarComponent
+    RegistrarComponent,
+    CallbackComponent
   ],
   imports: [
     BrowserModule,

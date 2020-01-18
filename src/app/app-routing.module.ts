@@ -10,12 +10,12 @@ import {GuardGuard} from './guards/guard.guard';
 
 const routes: Routes =
    [
-    {  component: HomeComponent, path: 'home', canActivate: [GuardGuard]},
-    {  component: DetailComponent, path: 'detail/:id', canActivate: [GuardGuard]},
+    {  component: HomeComponent, path: 'home'},
+    {  component: DetailComponent, path: 'detail/:id'},
     {  component: BuscarComponent, path: 'buscar/:id'},
     {  component: LoginComponent, path: 'login'},
     {  component: RegistrarComponent, path: 'registrar'},
-    {  component: HomeComponent, path: '**', canActivate: [GuardGuard]}
+    {  component: HomeComponent, path: '**'}
   ];
 
 @NgModule({
